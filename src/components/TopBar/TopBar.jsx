@@ -48,7 +48,7 @@ function TopBar({ theme, toggleTheme, handleDrawerToggle }) {
         </Button>
 
         <Box display="flex">
-          {!isVerySmallScreen && <HecMenu />}
+          {/* {!isVerySmallScreen && <HecMenu />} */}
 
           <ConnectMenu theme={theme} />
 

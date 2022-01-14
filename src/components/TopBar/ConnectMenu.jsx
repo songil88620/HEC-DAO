@@ -29,10 +29,10 @@ function ConnectMenu({ theme }) {
     clickFunc = disconnect;
   }
 
-  if (chainId !== 250) {
-    buttonText = "Switch to Fantom";
-    clickFunc = swithNetwork;
-  }
+  // if (chainId !== 250) {
+  //   buttonText = "Switch to Fantom";
+  //   clickFunc = swithNetwork;
+  // }
   
   if (pendingTransactions && pendingTransactions.length > 0) {
     buttonText = "In progress";

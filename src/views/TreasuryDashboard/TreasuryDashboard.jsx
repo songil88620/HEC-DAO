@@ -120,7 +120,7 @@ function TreasuryDashboard() {
 
               <Box className="metric price">
                 <Typography variant="h6" color="textSecondary">
-                  HEC Price
+                  WAND Price
                 </Typography>
                 <Typography variant="h5">
                   {/* appleseed-fix */}
@@ -130,10 +130,10 @@ function TreasuryDashboard() {
 
               <Box className="metric wsoprice">
                 <Typography variant="h6" color="textSecondary">
-                  wsHEC Price
+                  wsWAND Price
                   <InfoTooltip
                     message={
-                      "wsHEC = sHEC * index\n\nThe price of wsHEC is equal to the price of HEC multiplied by the current index"
+                      "wsWAND = sWAND * index\n\nThe price of wsWAND is equal to the price of WAND multiplied by the current index"
                     }
                   />
                 </Typography>
@@ -158,7 +158,7 @@ function TreasuryDashboard() {
 
               <Box className="metric bpo">
                 <Typography variant="h6" color="textSecondary">
-                  Backing per HEC
+                  Backing per WAND
                 </Typography>
                 <Typography variant="h5">
                   {backingPerHec ? formatCurrency(backingPerHec, 2) : <Skeleton type="text" />}
@@ -170,12 +170,12 @@ function TreasuryDashboard() {
                   Current Index
                   <InfoTooltip
                     message={
-                      "The current index tracks the amount of sHEC accumulated since the beginning of staking. Basically, how much sHEC one would have if they staked and held a single HEC from day 1."
+                      "The current index tracks the amount of sWAND accumulated since the beginning of staking. Basically, how much sWAND one would have if they staked and held a single WAND from day 1."
                     }
                   />
                 </Typography>
                 <Typography variant="h5">
-                  {currentIndex ? trim(currentIndex, 2) + " sHEC" : <Skeleton type="text" />}
+                  {currentIndex ? trim(currentIndex, 2) + " sWAND" : <Skeleton type="text" />}
                 </Typography>
               </Box>
             </Box>
@@ -273,7 +273,7 @@ function TreasuryDashboard() {
                   data={data}
                   dataKey={["treasuryHecDaiPOL"]}
                   stopColor={[["rgba(128, 204, 131, 1)", "rgba(128, 204, 131, 0)"]]}
-                  headerText="Protocol Owned Liquidity HEC-DAI"
+                  headerText="Protocol Owned Liquidity WAND-DAI"
                   headerSubText={`${data && trim(data[0].treasuryHecDaiPOL, 2)}% `}
                   dataFormat="percent"
                   bulletpointColors={bulletpoints.pol}
@@ -293,7 +293,7 @@ function TreasuryDashboard() {
                   data={staked}
                   dataKey={["staked"]}
                   stopColor={[["#55EBC7", "#47ACEB"]]}
-                  headerText="HEC Staked"
+                  headerText="WAND Staked"
                   dataFormat="percent"
                   headerSubText={`${staked && trim(staked[0].staked, 2)}% `}
                   isStaked={true}

@@ -36,8 +36,7 @@ function a11yProps(index) {
 
 function Stake() {
   const dispatch = useDispatch();
-  const { provider, address, connected, connect, chainID } = useWeb3Context();
-
+  const { provider, address, connected, connect, chainID } = useWeb3Context(); 
   const [zoomed, setZoomed] = useState(false);
   const [view, setView] = useState(0);
   const view1 = 0;
@@ -150,11 +149,11 @@ function Stake() {
     // 1st catch if quantity > balance
     let gweiValue = ethers.utils.parseUnits(value, "gwei");
     if (action === "stake" && gweiValue.gt(ethers.utils.parseUnits(hecBalance, "gwei"))) {
-      return dispatch(error("You cannot stake more than your HEC balance."));
+      return dispatch(error("You cannot stake more than your WAND balance."));
     }
 
     if (action === "unstake" && gweiValue.gt(ethers.utils.parseUnits(unstakedVal, "gwei"))) {
-      return dispatch(error("You cannot unstake more than your sHEC balance."));
+      return dispatch(error("You cannot unstake more than your sWAND balance."));
     }
     await dispatch(
       changeStake({
@@ -232,7 +231,7 @@ function Stake() {
               <Grid container direction="column" spacing={2}>
                 <Grid item>
                   <div className="card-header">
-                    <Typography variant="h5">Single Stake v2 (3, 3)</Typography>
+                    <Typography variant="h5">Single Stake v1 (3, 3)</Typography>
                     <RebaseTimer />
                   </div>
                 </Grid>
@@ -281,7 +280,7 @@ function Stake() {
                             Current Index
                           </Typography>
                           <Typography variant="h4">
-                            {currentIndex ? <>{trim(currentIndex, 2)} HEC</> : <Skeleton width="150px" />}
+                            {currentIndex ? <>{trim(currentIndex, 2)} WAND</> : <Skeleton width="150px" />}
                           </Typography>
                         </div>
                       </Grid>
@@ -295,7 +294,7 @@ function Stake() {
                       <div className="wallet-menu" id="wallet-menu">
                         {modalButton}
                       </div>
-                      <Typography variant="h6">Connect your wallet to stake HEC</Typography>
+                      <Typography variant="h6">Connect your wallet to stake WAND</Typography>
                     </div>
                   ) : (
                     <>
@@ -321,15 +320,15 @@ function Stake() {
                                 <Typography variant="body1" className="stake-note" color="textSecondary">
                                   {view === 0 ? (
                                     <>
-                                      First time staking <b>HEC</b>?
+                                      First time staking <b>WAND</b>?
                                       <br />
-                                      Please approve Hector Dao to use your <b>HEC</b> for staking.
+                                      Please approve MAGIC Dao to use your <b>WAND</b> for staking.
                                     </>
                                   ) : (
                                     <>
-                                      First time unstaking <b>sHEC</b>?
+                                      First time unstaking <b>sWAND</b>?
                                       <br />
-                                      Please approve Hector Dao to use your <b>sHEC</b> for unstaking.
+                                      Please approve MAGIC Dao to use your <b>sWAND</b> for unstaking.
                                     </>
                                   )}
                                 </Typography>
@@ -372,7 +371,7 @@ function Stake() {
                                   onChangeStake("stake", false);
                                 }}
                               >
-                                {txnButtonText(pendingTransactions, "staking", "Stake HEC")}
+                                {txnButtonText(pendingTransactions, "staking", "Stake WAND")}
                               </Button>
                             ) : (
                               <Button
@@ -401,7 +400,7 @@ function Stake() {
                                   onChangeStake("unstake", false);
                                 }}
                               >
-                                {txnButtonText(pendingTransactions, "unstaking", "Unstake HEC")}
+                                {txnButtonText(pendingTransactions, "unstaking", "Unstake WAND")}
                               </Button>
                             ) : (
                               <Button
@@ -424,20 +423,20 @@ function Stake() {
                         <div className="data-row">
                           <Typography variant="body1">Your Balance</Typography>
                           <Typography variant="body1">
-                            {isAppLoading ? <Skeleton width="80px" /> : <>{trim(hecBalance, 4)} HEC</>}
+                            {isAppLoading ? <Skeleton width="80px" /> : <>{trim(hecBalance, 4)} WAND</>}
                           </Typography>
                         </div>
                         <div className="data-row">
                           <Typography variant="body1">Your Staked Balance</Typography>
                           <Typography variant="body1">
-                            {isAppLoading ? <Skeleton width="80px" /> : <>{trimmedBalance} sHEC</>}
+                            {isAppLoading ? <Skeleton width="80px" /> : <>{trimmedBalance} sWAND</>}
                           </Typography>
                         </div>
 
                         <div className="data-row">
                           <Typography variant="body1">Next Reward Amount</Typography>
                           <Typography variant="body1">
-                            {isAppLoading ? <Skeleton width="80px" /> : <>{nextRewardValue} sHEC</>}
+                            {isAppLoading ? <Skeleton width="80px" /> : <>{nextRewardValue} sWAND</>}
                           </Typography>
                         </div>
 
@@ -479,7 +478,7 @@ function Stake() {
                         <div className="wallet-menu" id="wallet-menu">
                           {modalButton}
                         </div>
-                        <Typography variant="h6">Connect your wallet to stake HEC</Typography>
+                        <Typography variant="h6">Connect your wallet to stake WAND</Typography>
                       </div>
                     ) : (
                       <>
@@ -494,9 +493,9 @@ function Stake() {
                                 <Box className="help-text">
                                   <Typography variant="body1" className="stake-note" color="textSecondary">
                                     <>
-                                      First time unstaking <b>sHEC</b>?
+                                      First time unstaking <b>sWAND</b>?
                                       <br />
-                                      Please approve Hector Dao to use your <b>sHEC</b> for unstaking.
+                                      Please approve MAGIC Dao to use your <b>sWAND</b> for unstaking.
                                     </>
                                   </Typography>
                                 </Box>
@@ -561,14 +560,14 @@ function Stake() {
                           <div className="data-row">
                             <Typography variant="body1">Your Staked Balance</Typography>
                             <Typography variant="body1">
-                              {isAppLoading ? <Skeleton width="80px" /> : <>{oldtrimmedBalance} sHEC</>}
+                              {isAppLoading ? <Skeleton width="80px" /> : <>{oldtrimmedBalance} sWAND</>}
                             </Typography>
                           </div>
 
                           <div className="data-row">
                             <Typography variant="body1">Next Reward Amount</Typography>
                             <Typography variant="body1">
-                              {isAppLoading ? <Skeleton width="80px" /> : <>{oldnextRewardValue} sHEC</>}
+                              {isAppLoading ? <Skeleton width="80px" /> : <>{oldnextRewardValue} sWAND</>}
                             </Typography>
                           </div>
 

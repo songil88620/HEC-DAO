@@ -8,7 +8,7 @@ import { ReactComponent as BondIcon } from "../../assets/icons/bond.svg";
 import { ReactComponent as GlobeIcon } from "../../assets/icons/globe.svg";
 import { ReactComponent as DashboardIcon } from "../../assets/icons/dashboard.svg";
 import { ReactComponent as WrapIcon } from "../../assets/icons/wrap.svg";
-import { ReactComponent as HectorIcon } from "../../assets/icons/hector-nav-logo.svg";
+import  MagicLogo from "../../assets/icons/MagicLogo.png";
 import { trim, shorten } from "../../helpers";
 import { useAddress, useWeb3Context } from "src/hooks/web3Context";
 import useBonds from "../../hooks/Bonds";
@@ -51,19 +51,19 @@ function NavContent() {
       <Box className="dapp-sidebar-inner" display="flex" justifyContent="space-between" flexDirection="column">
         <div className="dapp-menu-top">
           <Box className="branding-header">
-            <Link href="https://app.hectordao.com" target="_blank">
-              <SvgIcon
+            <Link href="#" target="">
+              {/* <SvgIcon
                 id="header-nav-logo"
                 color="primary"
                 viewBox="0 0 151 100"
                 component={HectorIcon}
                 style={{ minWdth: "151px", minHeight: "98px", width: "151px" }}
-              />
-              <div className="wallet-link f-32">Hector</div>
+              /> */}
+              <img src={MagicLogo} style={{ minWdth: "151px", minHeight: "98px", width: "151px" }} alt="Magic" />  
             </Link>
             {address && (
               <div className="wallet-link">
-                <Link href={`https://ftmscan.com/address/${address}`} target="_blank">
+                <Link href={`https://etherscan.io/address/${address}`} target="_blank">
                   {shorten(address)}
                 </Link>
               </div>
@@ -102,7 +102,7 @@ function NavContent() {
                 </Typography>
               </Link>
 
-              <Link
+              {/* <Link
                 component={NavLink}
                 id="wrap-nav"
                 to="/wrap"
@@ -115,9 +115,9 @@ function NavContent() {
                   <SvgIcon color="primary" component={WrapIcon} />
                   Wrap
                 </Typography>
-              </Link>
+              </Link> */}
 
-              <Link
+              {/* <Link
                 component={NavLink}
                 id="bond-nav"
                 to="/bonds"
@@ -130,7 +130,7 @@ function NavContent() {
                   <SvgIcon color="primary" component={BondIcon} />
                   Bond
                 </Typography>
-              </Link>
+              </Link> */}
 
               {/* <div className="dapp-menu-data discounts">
                 <div className="bond-discounts">

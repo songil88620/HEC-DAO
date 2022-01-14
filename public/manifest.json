@@ -1,26 +1,26 @@
 {
-  "short_name": "HectorDAO",
+  "short_name": "MagicDAO",
   "start_url": ".",
   "homepage": "./",
-  "name": "HectorDAO",
+  "name": "MagicDAO",
   "launch_path": "/public/index.html",
   "icons": [{
-      "src": "favicon.ico",
+      "src": "MagicLogo.png",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     },
     {
-      "src": "hector-logo-32.png",
+      "src": "MagicLogo.png",
       "type": "image/png",
       "sizes": "32x32"
     },
     {
-      "src": "logo192.png",
+      "src": "MagicLogo.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "logo512.png",
+      "src": "MagicLogo.png",
       "type": "image/png",
       "sizes": "512x512"
     }

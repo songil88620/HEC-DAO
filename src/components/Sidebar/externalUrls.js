@@ -8,34 +8,34 @@ import { SvgIcon } from "@material-ui/core";
 import { AccountBalanceOutlined, MonetizationOnOutlined } from "@material-ui/icons";
 
 const externalUrls = [
+  // {
+  //   title: "Buy on SpookySwap",
+  //   url: "https://spookyswap.finance/swap?inputCurrency=0x8D11eC38a3EB5E956B052f67Da8Bdc9bef8Abf3E&outputCurrency=0x5C4FDfc5233f935f20D2aDbA572F770c2E377Ab0",
+  //   icon: <SvgIcon viewBox="0 0 64 64" color="primary" component={SpookySwapIcon} />,
+  // },
+  // {
+  //   title: "Buy on SpiritSwap",
+  //   url: "https://swap.spiritswap.finance/#/exchange/swap/0x5c4fdfc5233f935f20d2adba572f770c2e377ab0",
+  //   icon: <SvgIcon viewBox="0 0 155 172" color="primary" component={SpiritSwapIcon} />,
+  // },
   {
-    title: "Buy on SpookySwap",
-    url: "https://spookyswap.finance/swap?inputCurrency=0x8D11eC38a3EB5E956B052f67Da8Bdc9bef8Abf3E&outputCurrency=0x5C4FDfc5233f935f20D2aDbA572F770c2E377Ab0",
-    icon: <SvgIcon viewBox="0 0 64 64" color="primary" component={SpookySwapIcon} />,
-  },
-  {
-    title: "Buy on SpiritSwap",
-    url: "https://swap.spiritswap.finance/#/exchange/swap/0x5c4fdfc5233f935f20d2adba572f770c2e377ab0",
-    icon: <SvgIcon viewBox="0 0 155 172" color="primary" component={SpiritSwapIcon} />,
-  },
-  {
-    title: "Hector Bank",
+    title: "MAGIC Bank",
     label: "(Coming soon)",
     icon: <MonetizationOnOutlined viewBox="0 0 20 24" />,
   },
   {
-    title: "Hector PRO",
+    title: "MAGIC PRO",
     label: "(Coming soon)",
     icon: <AccountBalanceOutlined viewBox="0 0 20 24" />,
   },
   {
     title: "Governance",
-    url: "https://snapshot.org/#/hectordao.eth",
+    url: "#",
     icon: <SvgIcon color="primary" component={GovIcon} />,
   },
   {
     title: "Docs",
-    url: "https://docs.hectordao.com",
+    url: "#",
     icon: <SvgIcon color="primary" component={DocsIcon} />,
   },
 ];

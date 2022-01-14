@@ -13,7 +13,7 @@ import { DEFAULT_NETWORK, messages } from "src/constants";
  * @returns string
  */
 function getTestnetURI() {
-  return "";
+  return "https://mainnet.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161";
 }
 
 /**
@@ -32,7 +32,7 @@ const ALL_URIs = NodeHelper.getNodesUris();
 function getMainnetURI(): string {
   // Shuffles the URIs for "intelligent" loadbalancing
   const allURIs = ALL_URIs.sort(() => Math.random() - 0.5);
-  const randomIndex = Math.floor(Math.random() * allURIs.length);
+  const randomIndex = Math.floor(Math.random() * allURIs.length); 
   return allURIs[randomIndex];
 }
 
@@ -84,7 +84,7 @@ export const useWeb3Context = () => {
 };
 
 export const useAddress = () => {
-  const { address } = useWeb3Context();
+  const { address } = useWeb3Context(); 
   return address;
 };
 
@@ -157,12 +157,13 @@ export const Web3ContextProvider: React.FC<{ children: ReactElement }> = ({ chil
    */
   const _checkNetwork = (otherChainID: number): Boolean => {
     if (chainID !== otherChainID) {
-      console.warn("You are switching networks");
-      if (otherChainID === 250) {
+      console.warn("You are switching networks",otherChainID);
+      // if (otherChainID === 250) {
         setChainID(otherChainID);
+        console.log(">>>>>h")
         otherChainID === 250 ? setUri(getMainnetURI()) : setUri(getTestnetURI());
         return true;
-      }
+      // }
       return false;
     }
     return true;

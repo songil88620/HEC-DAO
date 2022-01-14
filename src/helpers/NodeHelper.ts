@@ -30,7 +30,9 @@ export class NodeHelper {
    * returns Array of APIURIs where NOT on invalidNodes list
    */
   static getNodesUris = () => {
+    //let allURIs = ["https://mainnet.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161"];
     let allURIs = ["https://rpc.ftm.tools"];
+    // https://mainnet.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161
     return allURIs;
   };
 
@@ -44,6 +46,7 @@ export class NodeHelper {
     return await Promise.all(
       NodeHelper.getNodesUris().map(async URI => {
         let workingUrl = await NodeHelper.checkNodeStatus(URI);
+        console.log(">>>>WW", workingUrl)
         return workingUrl;
       }),
     );
