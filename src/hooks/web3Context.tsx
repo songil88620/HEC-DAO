@@ -158,12 +158,12 @@ export const Web3ContextProvider: React.FC<{ children: ReactElement }> = ({ chil
   const _checkNetwork = (otherChainID: number): Boolean => {
     if (chainID !== otherChainID) {
       console.warn("You are switching networks",otherChainID);
-      // if (otherChainID === 250) {
+       if (otherChainID === 250) {
         setChainID(otherChainID);
         console.log(">>>>>h")
         otherChainID === 250 ? setUri(getMainnetURI()) : setUri(getTestnetURI());
         return true;
-      // }
+       }
       return false;
     }
     return true;
